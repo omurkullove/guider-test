@@ -22,6 +22,8 @@ const handleFetchBooks = async () => {
 const HomePage = async () => {
     const cookieStore = cookies();
 
+    console.log(headers().get('referer'));
+
     const books = await handleFetchBooks();
 
     const defaultActiveOption = cookieStore.get('option')?.value as unknown as string | undefined;
