@@ -2,11 +2,11 @@ import React from 'react';
 import SortBlock from './components/sort-block';
 import BookList from './components/book-list';
 import axios from 'axios';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 
 const handleFetchBooks = async () => {
     try {
-        const res = await axios(`http://localhost:3000/api/books`, {
+        const res = await axios(`${headers().get('referer')}api/books`, {
             withCredentials: true,
             headers: { Cookie: cookies().toString() },
         });
