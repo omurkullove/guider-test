@@ -119,7 +119,7 @@ const SortBlock = ({ defaultActiveOption, defaultActiveTags }: ISortBlockProps) 
                                     ? 'rotate-180'
                                     : 'rotate-0'
                             }`}
-                            src='./arrow.svg'
+                            src='/arrow.svg'
                             width={8}
                             height={8}
                             alt='arrow'
@@ -136,7 +136,7 @@ const SortBlock = ({ defaultActiveOption, defaultActiveTags }: ISortBlockProps) 
                 >
                     <p className='font-bold text-[15px] sm:text-[12px]'>Tags</p>
                     <Image
-                        src='./tag-icon.svg'
+                        src='/tag-icon.svg'
                         className={`transition-transform duration-300 transform ${
                             isTagBoxOpen ? 'rotate-180' : 'rotate-0'
                         }`}
