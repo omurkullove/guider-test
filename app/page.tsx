@@ -6,10 +6,13 @@ import { cookies, headers } from 'next/headers';
 
 const handleFetchBooks = async () => {
     try {
-        const res = await axios(`${headers().get('referer')}api/books`, {
-            withCredentials: true,
-            headers: { Cookie: cookies().toString() },
-        });
+        const res = await axios(
+            `${new URL(headers().get('referer') ?? 'http://localhost:3000').origin}/api/books`,
+            {
+                withCredentials: true,
+                headers: { Cookie: cookies().toString() },
+            }
+        );
         const data = await res.data;
 
         return data;
